@@ -162,3 +162,17 @@ header {
 .btn:hover {
     background: #eab308;
 }
+form input,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    background: #020617;
+    border: 1px solid #1e293b;
+    color: #fff;
+    border-radius: 6px;
+}
+
+form textarea {
+    min-height: 120px;
+}
