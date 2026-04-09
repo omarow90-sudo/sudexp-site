@@ -115,3 +115,10 @@ footer {
     text-align: center;
     color: #94a3b8;
 }
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    background: rgba(2, 6, 23, 0.8);
+}
