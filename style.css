@@ -122,3 +122,13 @@ header {
     backdrop-filter: blur(10px);
     background: rgba(2, 6, 23, 0.8);
 }
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.8s ease;
+}
+
+.fade-up.active {
+    opacity: 1;
+    transform: translateY(0);
+}
