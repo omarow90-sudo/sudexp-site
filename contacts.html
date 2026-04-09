@@ -1,31 +1,107 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-<meta charset="UTF-8">
-<title>Контакты</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Контакты — Saraptama Expert Group</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <header>
-<div class="container">
-<nav>
-<div><b>Saraptama Expert Group</b></div>
-<div>
-<a href="index.html">Главная</a>
-<a href="services.html">Услуги</a>
-<a href="about.html">О нас</a>
-<a href="contacts.html">Контакты</a>
-</div>
-</nav>
-</div>
+  <div class="container header-inner">
+    
+    <div class="logo">
+      <img src="SARAPTAMA_EXPERT_GROUP_logo.jpeg" alt="logo">
+      <span>Saraptama Expert Group</span>
+    </div>
+
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="construction.html">Строительная</a>
+      <a href="auto.html">Авто</a>
+      <a href="contacts.html">Контакты</a>
+    </nav>
+
+  </div>
 </header>
 
-<div class="container">
-<h1>Контакты</h1>
-<p>Город: Алматы</p>
-<p>Телефон: +77023677771</p>
-</div>
+
+<section class="section">
+  <div class="container">
+
+    <h1 class="fade-up">Контакты</h1>
+
+    <p class="fade-up" style="margin-top:15px;">
+      Свяжитесь с нами любым удобным способом
+    </p>
+
+    <!-- CONTACT INFO -->
+    <div class="cards" style="margin-top:40px;">
+      
+      <div class="card fade-up">
+        <h3>Телефон</h3>
+        <p><a href="tel:+77023677771">+7 702 367 77 71</a></p>
+      </div>
+
+      <div class="card fade-up">
+        <h3>Город</h3>
+        <p>Алматы</p>
+      </div>
+
+      <div class="card fade-up">
+        <h3>Email</h3>
+        <p>info@sudexp.kz</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- FORM -->
+<section class="section">
+  <div class="container">
+
+    <h2 class="fade-up">Оставить заявку</h2>
+
+    <form class="fade-up" action="https://formsubmit.co/info@sudexp.kz" method="POST" style="max-width:500px; margin-top:30px;">
+
+      <input type="text" name="name" placeholder="Ваше имя" required>
+      <input type="tel" name="phone" placeholder="Телефон" required>
+      <textarea name="message" placeholder="Опишите задачу" required></textarea>
+
+      <button type="submit" class="btn">Отправить</button>
+
+    </form>
+
+  </div>
+</section>
+
+
+<footer>
+  <div class="container">
+    <p>Saraptama Expert Group</p>
+    <p>Алматы | +7 702 367 77 71</p>
+  </div>
+</footer>
+
+
+<script>
+const elements = document.querySelectorAll('.fade-up');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('active');
+    }
+  });
+});
+
+elements.forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
