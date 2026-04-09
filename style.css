@@ -1,65 +1,117 @@
-body {
+/* RESET */
+* {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #1e2a38;
-    color: #fff;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/* BASE */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #0f172a;
+    color: #e5e7eb;
+    line-height: 1.6;
+}
+
+/* CONTAINER */
 .container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 40px 20px;
+    width: 1200px;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+/* HEADER */
+header {
+    background: #020617;
+    border-bottom: 1px solid #1e293b;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .logo img {
-    max-width: 220px;
+    height: 40px;
 }
 
-h1 {
-    text-align: center;
-    font-size: 34px;
+.logo span {
+    font-weight: 600;
+    font-size: 18px;
 }
 
-.subtitle {
-    text-align: center;
-    color: #b0b8c0;
-    margin-bottom: 30px;
-}
-
-.btn {
-    display: block;
-    margin: 0 auto 40px;
-    padding: 12px 25px;
-    background: #0d1117;
-    color: #fff;
+/* NAV */
+nav a {
+    color: #cbd5f5;
     text-decoration: none;
-    border-radius: 4px;
+    margin-left: 25px;
+    font-size: 14px;
+    transition: 0.3s;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+nav a:hover {
+    color: #facc15;
+}
+
+/* HERO */
+.hero {
+    padding: 100px 0;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 600px;
+    color: #94a3b8;
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 24px;
+    background: #facc15;
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 6px;
+}
+
+/* SECTION */
+.section {
+    padding: 80px 0;
+}
+
+/* CARDS */
+.cards {
+    display: flex;
     gap: 20px;
 }
 
 .card {
-    background: #2a3545;
-    padding: 20px;
-    border-radius: 6px;
-}
-
-.section {
-    margin-top: 40px;
-    background: #2a3545;
+    background: #020617;
     padding: 25px;
-    border-radius: 6px;
+    border: 1px solid #1e293b;
+    flex: 1;
+    border-radius: 10px;
 }
 
-a {
-    color: #cfd6dd;
-    text-decoration: none;
-}
-
-a:hover {
-    color: #fff;
+/* FOOTER */
+footer {
+    background: #020617;
+    padding: 40px 0;
+    border-top: 1px solid #1e293b;
+    text-align: center;
+    color: #94a3b8;
 }
