@@ -1,144 +1,147 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<title>Saraptama Expert Group</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #1e2a38, #2f3e50);
-    color: #fff;
-}
-
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 40px 20px;
-}
-
-.logo {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.logo img {
-    max-width: 300px;
-}
-
-h1 {
-    text-align: center;
-    font-size: 36px;
-    margin-bottom: 10px;
-}
-
-.subtitle {
-    text-align: center;
-    color: #ccc;
-    margin-bottom: 30px;
-}
-
-.btn {
-    display: block;
-    width: fit-content;
-    margin: 0 auto 40px;
-    padding: 12px 25px;
-    background: #000;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 6px;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.card {
-    background: #ffffff;
-    color: #000;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.section {
-    margin-top: 40px;
-}
-
-ul {
-    padding-left: 20px;
-}
-
-.footer {
-    text-align: center;
-    margin-top: 50px;
-    color: #aaa;
-}
-</style>
-
+  <meta charset="UTF-8">
+  <title>Saraptama Expert Group</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="container">
-<div style="display:flex; justify-content:space-between; margin-bottom:30px;">
-  <b>Saraptama Expert Group</b>
-  <div>
-    <a href="index.html" style="color:white; margin-right:15px;">Главная</a>
-    <a href="construction.html" style="color:white; margin-right:15px;">Строительная</a>
-    <a href="auto.html" style="color:white;">Авто</a>
-  </div>
-</div>
+<!-- HEADER -->
+<header>
+  <div class="container header-inner">
+    
     <div class="logo">
-        <img src="SARAPTAMA_EXPERT_GROUP_logo.jpeg">
+      <img src="SARAPTAMA_EXPERT_GROUP_logo.jpeg" alt="logo">
+      <span>Saraptama Expert Group</span>
     </div>
 
-    <h1>Судебная экспертиза в Алматы</h1>
-    <div class="subtitle">Заключения, принимаемые судами Республики Казахстан</div>
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="construction.html">Строительная</a>
+      <a href="auto.html">Авто</a>
+      <a href="#">Контакты</a>
+    </nav>
 
-    <a href="https://wa.me/77023677771" class="btn">Написать в WhatsApp</a>
+  </div>
+</header>
 
-    <div class="grid">
 
-        <div class="card">
-  <h3>Строительная экспертиза</h3>
-  <p>Выявляем дефекты и помогаем взыскать ущерб</p>
-  <a href="construction.html">Подробнее →</a>
-</div>
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <h1 class="fade-up">Судебная экспертиза в Алматы</h1>
+    
+    <p class="fade-up">
+      Независимые экспертные заключения для суда, бизнеса и частных лиц.
+      Работаем по законодательству Республики Казахстан.
+    </p>
 
-<div class="card">
-  <h3>Автоэкспертиза</h3>
-  <p>Оценка ущерба после ДТП</p>
-  <a href="auto.html">Подробнее →</a>
-</div>
-        </div>
+    <a href="tel:+77023677771" class="btn fade-up">Позвонить</a>
+  </div>
+</section>
+
+
+<!-- ABOUT -->
+<section class="section">
+  <div class="container">
+    <h2 class="fade-up">О компании</h2>
+    
+    <p class="fade-up" style="max-width:700px; margin-top:20px;">
+      Saraptama Expert Group — независимая экспертная организация,
+      работающая в сфере судебной и досудебной экспертизы.
+      Предоставляем заключения для судов, юридических лиц и частных клиентов.
+    </p>
+  </div>
+</section>
+
+
+<!-- SERVICES -->
+<section class="section">
+  <div class="container">
+
+    <h2 class="fade-up">Наши услуги</h2>
+
+    <div class="cards" style="margin-top:30px;">
+      
+      <div class="card fade-up">
+        <h3>Строительная экспертиза</h3>
+        <p>Дефекты, сметы, качество строительства</p>
+      </div>
+
+      <div class="card fade-up">
+        <h3>Автоэкспертиза</h3>
+        <p>ДТП, оценка ущерба, технический анализ</p>
+      </div>
+
+      <div class="card fade-up">
+        <h3>Судебная экспертиза</h3>
+        <p>Заключения для судебных разбирательств</p>
+      </div>
 
     </div>
 
-    <div class="section card">
-        <h3>Почему выбирают нас</h3>
-        <ul>
-            <li>10+ лет опыта</li>
-            <li>500+ экспертиз</li>
-            <li>Заключения принимаются судами</li>
-            <li>Работаем по всему Казахстану</li>
-        </ul>
+  </div>
+</section>
+
+
+<!-- ADVANTAGES -->
+<section class="section">
+  <div class="container">
+
+    <h2 class="fade-up">Почему выбирают нас</h2>
+
+    <div class="cards" style="margin-top:30px;">
+      
+      <div class="card fade-up">
+        <h3>Опыт</h3>
+        <p>Работаем на рынке экспертиз с 2022 года</p>
+      </div>
+
+      <div class="card fade-up">
+        <h3>Соответствие закону</h3>
+        <p>Заключения принимаются судами РК</p>
+      </div>
+
+      <div class="card fade-up">
+        <h3>Оперативность</h3>
+        <p>Быстрое выполнение без потери качества</p>
+      </div>
+
     </div>
 
-    <div class="section card">
-        <h3>Контакты</h3>
-        <p>Город: Алматы</p>
-        <p>Телефон: +7 702 367 77 71</p>
-    </div>
+  </div>
+</section>
 
-    <div class="footer">
-        © Saraptama Expert Group
-    </div>
 
-</div>
+<!-- CTA -->
+<section class="section">
+  <div class="container" style="text-align:center;">
+
+    <h2 class="fade-up">Нужна экспертиза?</h2>
+
+    <p class="fade-up" style="margin-top:15px;">
+      Свяжитесь с нами для консультации
+    </p>
+
+    <a href="tel:+77023677771" class="btn fade-up">Позвонить сейчас</a>
+
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p>Saraptama Expert Group</p>
+    <p>Алматы | +7 702 367 77 71</p>
+  </div>
+</footer>
+
+
+<!-- ANIMATION SCRIPT -->
 <script>
 const elements = document.querySelectorAll('.fade-up');
 
@@ -152,68 +155,6 @@ const observer = new IntersectionObserver(entries => {
 
 elements.forEach(el => observer.observe(el));
 </script>
+
 </body>
 </html>
-<div class="card fade-up">
-    <section class="hero">
-  <div class="container">
-    <h1 class="fade-up">Судебная экспертиза в Алматы</h1>
-    
-    <p class="fade-up">
-      Профессиональные экспертные заключения для суда,
-      бизнеса и частных лиц.
-    </p>
-
-    <a href="#" class="btn fade-up">Получить консультацию</a>
-  </div>
-</section>
-.hero {
-    padding: 140px 0;
-    background: radial-gradient(circle at top, #1e293b, #020617);
-}.card {
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    border-color: #facc15;
-}.btn {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 12px 24px;
-    background: #facc15;
-    color: #000;
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: 6px;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background: #eab308;
-}<section class="section">
-  <div class="container">
-
-    <h2 class="fade-up">Почему выбирают нас</h2>
-
-    <div class="cards">
-      
-      <div class="card fade-up">
-        <h3>Опыт</h3>
-        <p>Работаем с 2022 года в сфере судебной экспертизы</p>
-      </div>
-
-      <div class="card fade-up">
-        <h3>Точность</h3>
-        <p>Заключения соответствуют законодательству РК</p>
-      </div>
-
-      <div class="card fade-up">
-        <h3>Скорость</h3>
-        <p>Оперативное выполнение без потери качества</p>
-      </div>
-
-    </div>
-
-  </div>
-</section>
