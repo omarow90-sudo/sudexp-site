@@ -1,0 +1,10 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/auto.html", "destination": "/avtotehnicheskaya-ekspertiza", "permanent": true },
+    { "source": "/auto", "destination": "/avtotehnicheskaya-ekspertiza", "permanent": true },
+    { "source": "/construction.html", "destination": "/stroitelnaya-ekspertiza", "permanent": true },
+    { "source": "/construction", "destination": "/stroitelnaya-ekspertiza", "permanent": true }
+  ]
+}
