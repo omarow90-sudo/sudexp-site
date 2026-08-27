@@ -1,10 +1,9 @@
 /* ─────────────────────────────────────────────────────────────
-   НАСТРОЙКА ФОРМЫ ЗАЯВОК
-   Замените ВАШ_КОД на код формы из formspree.io
-   Пример: 'https://formspree.io/f/xrgkabcd'
-   Пока код не заменён, заявка открывается в почтовой программе.
+   ФОРМА ЗАЯВОК — подключена к formspree.io
+   Заявки приходят на office@sudexp.kz
+   Если понадобится сменить форму — замените адрес ниже.
    ───────────────────────────────────────────────────────────── */
-var FORM_ENDPOINT = 'https://formspree.io/f/ВАШ_КОД';
+var FORM_ENDPOINT = 'https://formspree.io/f/xzebpaen';
 
 (function(){
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -115,7 +114,7 @@ var FORM_ENDPOINT = 'https://formspree.io/f/ВАШ_КОД';
       mailBtn.addEventListener('click', function(){
         var d = collect();
         if(!d.phone && !d.email){ say('Укажите телефон или почту, чтобы мы могли ответить.', false); return; }
-        if(FORM_ENDPOINT.indexOf('ВАШ_КОД') !== -1){
+        if(FORM_ENDPOINT.indexOf('/f/') === -1){
           // форма ещё не подключена — отправляем письмом через почтовый клиент
           var body = 'Услуга: ' + d.service + '\nИмя: ' + (d.name || '—') +
                      '\nТелефон: ' + (d.phone || '—') + '\nПочта: ' + (d.email || '—') +
