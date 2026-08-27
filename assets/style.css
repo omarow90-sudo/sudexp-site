@@ -343,3 +343,8 @@ footer a:hover{color:#fff}
 /* разделитель в форме */
 .or{display:flex;align-items:center;gap:.9rem;margin:1.4rem 0 1rem;font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .or::before,.or::after{content:"";flex:1;height:1px;background:var(--line)}
+
+/* переключатель языка */
+.lang{font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-decoration:none;color:var(--ink-soft);border:1px solid var(--line-2);padding:.5rem .8rem;border-radius:99px;transition:.25s var(--ease);flex-shrink:0}
+.lang:hover{background:var(--ink);color:#fff;border-color:var(--ink);transform:translateY(-2px)}
+@media (max-width:1000px){.lang{margin-left:auto;order:-1}}
