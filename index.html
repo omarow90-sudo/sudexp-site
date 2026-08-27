@@ -473,16 +473,22 @@
   <div class="modal">
     <div class="modal-in">
       <button class="close" id="close" aria-label="Закрыть">×</button>
-      <h3>Оставить заявку</h3>
-      <p class="sub">Опишите задачу — перезвоним и подскажем, какое исследование подходит.</p>
+      <h3>Заказать обратный звонок</h3>
+      <p class="sub">Оставьте номер — перезвоним в рабочее время и подскажем, какое исследование подходит.</p>
       <div class="field"><label for="fname">Имя</label><input id="fname" type="text" placeholder="Как к вам обращаться"></div>
       <div class="field"><label for="fphone">Телефон</label><input id="fphone" type="tel" placeholder="+7 ___ ___ __ __"></div>
+      <div class="field"><label for="fmail">Почта <span style="text-transform:none;letter-spacing:0">(необязательно)</span></label><input id="fmail" type="email" placeholder="name@mail.kz"></div>
       <div class="field"><label for="ftext">Суть вопроса</label><textarea id="ftext" placeholder="Кратко опишите ситуацию"></textarea></div>
+      <p class="formnote" id="formnote"></p>
       <div class="cta-row" style="margin-top:1.2rem">
-        <button class="btn btn-solid" id="sendWa" type="button">Отправить в WhatsApp <span class="arw">→</span></button>
-        <a class="btn btn-ghost" href="tel:+77023677771">Позвонить</a>
+        <button class="btn btn-solid" id="sendMail" type="button" style="width:100%;justify-content:center">Жду звонка <span class="arw">→</span></button>
       </div>
-      <p class="agree">Нажимая кнопку, вы соглашаетесь на обработку персональных данных. Заявка откроется в WhatsApp — вы увидите текст перед отправкой.</p>
+      <p class="agree">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+      <div class="or"><span>или свяжитесь сразу</span></div>
+      <div class="cta-row" style="margin-top:0">
+        <a class="btn btn-ghost" href="https://wa.me/77023677771" target="_blank" rel="noopener" style="flex:1;justify-content:center">WhatsApp</a>
+        <a class="btn btn-ghost" href="tel:+77023677771" style="flex:1;justify-content:center">Позвонить</a>
+      </div>
     </div>
   </div>
 </div>
