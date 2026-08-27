@@ -334,3 +334,12 @@ footer a:hover{color:#fff}
   html{scroll-behavior:auto}
   .reveal{opacity:1;transform:none}
 }
+
+/* сообщение формы */
+.formnote{font-size:.85rem;margin-top:.6rem;min-height:1.2em;transition:color .3s}
+.formnote.ok{color:var(--teal)}
+.formnote.err{color:#C2410C}
+
+/* разделитель в форме */
+.or{display:flex;align-items:center;gap:.9rem;margin:1.4rem 0 1rem;font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.or::before,.or::after{content:"";flex:1;height:1px;background:var(--line)}

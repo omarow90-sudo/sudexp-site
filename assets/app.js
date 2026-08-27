@@ -1,3 +1,11 @@
+/* ─────────────────────────────────────────────────────────────
+   НАСТРОЙКА ФОРМЫ ЗАЯВОК
+   Замените ВАШ_КОД на код формы из formspree.io
+   Пример: 'https://formspree.io/f/xrgkabcd'
+   Пока код не заменён, заявка открывается в почтовой программе.
+   ───────────────────────────────────────────────────────────── */
+var FORM_ENDPOINT = 'https://formspree.io/f/ВАШ_КОД';
+
 (function(){
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var $ = function(id){ return document.getElementById(id); };
@@ -86,12 +94,60 @@
     $('close').addEventListener('click', close);
     ov.addEventListener('click', function(e){ if(e.target === ov) close(); });
     document.addEventListener('keydown', function(e){ if(e.key === 'Escape') close(); });
-    $('sendWa').addEventListener('click', function(){
-      var n = $('fname').value.trim(), p = $('fphone').value.trim(), t = $('ftext').value.trim();
-      var subj = document.body.dataset.service ? '\nУслуга: ' + document.body.dataset.service : '';
-      var msg = 'Заявка с сайта sudexp.kz' + subj + '\nИмя: ' + (n || '—') + '\nТелефон: ' + (p || '—') + '\nВопрос: ' + (t || '—');
-      window.open('https://wa.me/77023677771?text=' + encodeURIComponent(msg), '_blank');
-    });
+    var note = $('formnote');
+    var say = function(text, ok){
+      if(!note) return;
+      note.textContent = text;
+      note.className = 'formnote' + (ok ? ' ok' : ' err');
+    };
+    var collect = function(){
+      return {
+        name: $('fname').value.trim(),
+        phone: $('fphone').value.trim(),
+        email: $('fmail') ? $('fmail').value.trim() : '',
+        text: $('ftext').value.trim(),
+        service: document.body.dataset.service || 'Главная страница'
+      };
+    };
+
+    var mailBtn = $('sendMail');
+    if(mailBtn){
+      mailBtn.addEventListener('click', function(){
+        var d = collect();
+        if(!d.phone && !d.email){ say('Укажите телефон или почту, чтобы мы могли ответить.', false); return; }
+        if(FORM_ENDPOINT.indexOf('ВАШ_КОД') !== -1){
+          // форма ещё не подключена — отправляем письмом через почтовый клиент
+          var body = 'Услуга: ' + d.service + '\nИмя: ' + (d.name || '—') +
+                     '\nТелефон: ' + (d.phone || '—') + '\nПочта: ' + (d.email || '—') +
+                     '\nВопрос: ' + (d.text || '—');
+          window.location.href = 'mailto:office@sudexp.kz?subject=' +
+            encodeURIComponent('Заявка с сайта: ' + d.service) + '&body=' + encodeURIComponent(body);
+          return;
+        }
+        mailBtn.disabled = true;
+        say('Отправляем…', true);
+        fetch(FORM_ENDPOINT, {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+          body: JSON.stringify({
+            'Услуга': d.service, 'Имя': d.name, 'Телефон': d.phone,
+            'Почта': d.email, 'Вопрос': d.text
+          })
+        }).then(function(r){
+          mailBtn.disabled = false;
+          if(r.ok){
+            say('Заявка отправлена. Мы свяжемся с вами в рабочее время.', true);
+            $('fname').value = ''; $('fphone').value = ''; $('ftext').value = '';
+            if($('fmail')) $('fmail').value = '';
+          } else {
+            say('Не удалось отправить. Позвоните нам: +7 702 367 77 71', false);
+          }
+        }).catch(function(){
+          mailBtn.disabled = false;
+          say('Не удалось отправить. Позвоните нам: +7 702 367 77 71', false);
+        });
+      });
+    }
   }
 
   var y = $('year'); if(y) y.textContent = new Date().getFullYear();
