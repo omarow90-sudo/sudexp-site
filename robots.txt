@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /vercel.json
 
-Sitemap: https://www.sudexp.kz/sitemap.xml
+Sitemap: https://sudexp.kz/sitemap.xml
