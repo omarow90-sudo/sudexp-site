@@ -398,3 +398,30 @@ footer a:hover{color:#fff}
 header.stuck .brand img{height:30px}
 .fbrand img{width:auto;height:34px;border-radius:0;filter:brightness(0) invert(1);opacity:.92}
 @media (max-width:620px){.brand img{height:28px}}
+
+/* ─── статьи ─── */
+.arts{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem}
+.art{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:1.8rem 1.7rem;text-decoration:none;display:flex;flex-direction:column;gap:.7rem;transition:transform .4s var(--ease),box-shadow .4s,border-color .4s}
+.art:hover{transform:translateY(-5px);box-shadow:var(--shadow-m);border-color:var(--blue)}
+.art .meta{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:flex;gap:.8rem;align-items:center}
+.art .meta i{font-style:normal;color:var(--blue)}
+.art h3{font-size:1.12rem;line-height:1.25}
+.art p{font-size:.9rem;color:var(--muted);flex:1}
+.art .more{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);display:flex;gap:.5rem;align-items:center;padding-top:.6rem}
+.art .more span{transition:transform .35s var(--ease)}
+.art:hover .more span{transform:translateX(5px)}
+
+.article{max-width:760px;margin-inline:auto}
+.article > .lede{font-size:1.12rem;color:var(--ink-soft);margin-bottom:2rem}
+.article h2{font-size:1.4rem;margin:2.6rem 0 .9rem}
+.article h3{font-size:1.08rem;margin:1.8rem 0 .6rem}
+.article p{color:var(--ink-soft);font-size:1rem;line-height:1.72}
+.article p + p{margin-top:.9rem}
+.article ul{margin:1rem 0;padding-left:0;list-style:none}
+.article ul li{position:relative;padding:.45rem 0 .45rem 1.5rem;color:var(--ink-soft);font-size:.98rem}
+.article ul li::before{content:"";position:absolute;left:.2rem;top:1.05rem;width:6px;height:6px;border-radius:50%;background:var(--blue)}
+.article .note{background:var(--blue-soft);border-radius:14px;padding:1.3rem 1.5rem;margin:1.8rem 0;font-size:.95rem;color:var(--ink-soft);border:1px solid #DBE3FF}
+.article .note b{color:var(--ink)}
+.art-end{border-top:1px solid var(--line);margin-top:3rem;padding-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+.art-end p{font-size:.95rem;color:var(--muted);flex:1;min-width:240px}
+@media (max-width:900px){.arts{grid-template-columns:1fr}}
