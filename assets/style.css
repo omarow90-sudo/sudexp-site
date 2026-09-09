@@ -426,3 +426,13 @@ header.stuck .brand img{height:36px}
 .fbrand{margin-bottom:1.1rem}
 .fbrand img{width:auto;height:40px;border-radius:0;filter:brightness(0) invert(1);opacity:.95}
 @media (max-width:620px){.brand img{height:32px}header.stuck .brand img{height:30px}}
+
+/* ─── логотип: финальные правила ─── */
+.brand img{width:auto !important;height:42px !important;border-radius:0 !important;object-fit:contain !important;box-shadow:none !important;transition:transform .35s var(--ease)}
+.brand:hover img{transform:translateY(-1px)}
+header.stuck .brand img{height:36px !important}
+.fbrand img{width:auto !important;height:40px !important;border-radius:0 !important;object-fit:contain !important;filter:brightness(0) invert(1);opacity:.95}
+@media (max-width:620px){
+  .brand img{height:32px !important}
+  header.stuck .brand img{height:30px !important}
+}
