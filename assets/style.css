@@ -474,3 +474,6 @@ header.stuck .brand img{height:36px}
 .calc-out .cta-row{margin-top:1.4rem}
 .calc-out .btn{width:100%;justify-content:center}
 @media (max-width:960px){.calc{grid-template-columns:1fr}.calc-out{position:static}}
+.calc-out .rows.koef li{padding:.5rem 0;font-size:.86rem}
+.calc-out .rows.koef li:first-child{border-top:1px solid rgba(255,255,255,.14)}
+.calc-out .rows.koef .k{font-size:.66rem;text-transform:none;letter-spacing:.02em;font-family:var(--body);color:#C7D0DC;padding-top:0;font-size:.86rem}
