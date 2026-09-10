@@ -427,12 +427,21 @@ header.stuck .brand img{height:36px}
 .fbrand img{width:auto;height:40px;border-radius:0;filter:brightness(0) invert(1);opacity:.95}
 @media (max-width:620px){.brand img{height:32px}header.stuck .brand img{height:30px}}
 
-/* ─── логотип: финальные правила ─── */
-.brand img{width:auto !important;height:42px !important;border-radius:0 !important;object-fit:contain !important;box-shadow:none !important;transition:transform .35s var(--ease)}
-.brand:hover img{transform:translateY(-1px)}
-header.stuck .brand img{height:36px !important}
-.fbrand img{width:auto !important;height:40px !important;border-radius:0 !important;object-fit:contain !important;filter:brightness(0) invert(1);opacity:.95}
-@media (max-width:620px){
-  .brand img{height:32px !important}
-  header.stuck .brand img{height:30px !important}
-}
+/* ─── аналитическая справка ─── */
+.fast{background:var(--ink);color:#fff;border-radius:28px;padding:3rem 2.8rem;position:relative;overflow:hidden}
+.fast::after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(42,75,232,.45),transparent 70%);right:-140px;bottom:-180px}
+.fast .inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.fast .eyebrow{color:#8FA3FF}
+.fast h2{margin-bottom:1rem}
+.fast > .inner > div > p{color:#9AA6B5;font-size:1rem}
+.fast .nums{display:flex;gap:2.4rem;margin-top:1.8rem;flex-wrap:wrap}
+.fast .nums div{font-family:var(--mono);font-size:.74rem;color:#9AA6B5;line-height:1.5;max-width:16ch}
+.fast .nums b{display:block;font-family:var(--display);font-size:1.6rem;color:#fff;font-weight:500;margin-bottom:.2rem}
+.fast .docs{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:1.6rem 1.7rem}
+.fast .docs h3{font-size:1rem;margin-bottom:.9rem}
+.fast .docs h4{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:#8FA3FF;font-weight:400;margin:1.2rem 0 .5rem}
+.fast .docs h4:first-of-type{margin-top:0}
+.fast .docs ul{list-style:none;margin:0;padding:0}
+.fast .docs li{position:relative;padding:.35rem 0 .35rem 1.3rem;font-size:.9rem;color:#C7D0DC}
+.fast .docs li::before{content:"";position:absolute;left:.15rem;top:.95rem;width:5px;height:5px;border-radius:50%;background:#8FA3FF}
+@media (max-width:900px){.fast{padding:2.2rem 1.6rem;border-radius:22px}.fast .inner{grid-template-columns:1fr;gap:2rem}}
