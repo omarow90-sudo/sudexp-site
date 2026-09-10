@@ -130,7 +130,7 @@
   <div class="wrap">
     <div class="calc">
       <div class="calc-form reveal">
-        <h3>Параметры квартиры</h3>
+        <h3>Объект</h3>
         <div class="cf">
           <label for="city">Город</label>
           <select id="city">
@@ -143,7 +143,20 @@
             <option value="other">Другой город</option>
           </select>
         </div>
-        <div class="cf">
+        <div class="cf" id="wrap-district">
+          <label for="district">Район</label>
+          <select id="district">
+            <option value="medeu">Медеуский</option>
+            <option value="bostandyk" selected>Бостандыкский</option>
+            <option value="almaly">Алмалинский</option>
+            <option value="auezov">Ауэзовский</option>
+            <option value="nauryzbay">Наурызбайский</option>
+            <option value="zhetysu">Жетысуский</option>
+            <option value="turksib">Турксибский</option>
+            <option value="alatau">Алатауский</option>
+          </select>
+        </div>
+        <div class="cf" id="wrap-zone" style="display:none">
           <label for="zone">Расположение</label>
           <select id="zone">
             <option value="center">Центр города</option>
@@ -153,13 +166,13 @@
         </div>
         <div class="cf-row">
           <div class="cf">
-            <label for="area">Площадь, м²</label>
-            <input type="number" id="area" value="60" min="10" max="500" step="1">
+            <label for="area">Общая площадь, м²</label>
+            <input type="number" id="area" value="60" min="10" max="600" step="0.1">
           </div>
           <div class="cf">
             <label for="rooms">Комнат</label>
             <select id="rooms">
-              <option value="0">Студия</option>
+              <option value="studio">Студия</option>
               <option value="1">1</option>
               <option value="2" selected>2</option>
               <option value="3">3</option>
@@ -168,52 +181,77 @@
           </div>
         </div>
 
-        <h3>Дом и этаж</h3>
+        <h3>Дом</h3>
+        <div class="cf-row">
+          <div class="cf">
+            <label for="material">Материал стен</label>
+            <select id="material">
+              <option value="panel">Панельный</option>
+              <option value="brick" selected>Кирпичный</option>
+              <option value="monolith">Монолит, каркас</option>
+              <option value="block">Газоблок, пеноблок</option>
+            </select>
+          </div>
+          <div class="cf">
+            <label for="byear">Год постройки</label>
+            <input type="number" id="byear" value="1995" min="1930" max="2026" step="1">
+          </div>
+        </div>
+        <div class="cf-row">
+          <div class="cf">
+            <label for="floor">Этаж квартиры</label>
+            <input type="number" id="floor" value="4" min="1" max="40" step="1">
+          </div>
+          <div class="cf">
+            <label for="floors">Этажей в доме</label>
+            <input type="number" id="floors" value="9" min="1" max="40" step="1">
+          </div>
+        </div>
+
+        <h3>Состояние и планировка</h3>
         <div class="cf">
-          <label for="material">Материал дома</label>
-          <select id="material">
-            <option value="panel">Панельный</option>
-            <option value="brick" selected>Кирпичный</option>
-            <option value="monolith">Монолитный</option>
+          <label for="repair">Ремонт</label>
+          <select id="repair">
+            <option value="none">Без ремонта, черновая</option>
+            <option value="old">Старый, требует обновления</option>
+            <option value="cosmetic" selected>Косметический</option>
+            <option value="modern">Современный</option>
+            <option value="premium">Премиальный, дизайнерский</option>
           </select>
         </div>
         <div class="cf-row">
           <div class="cf">
-            <label for="floor">Этаж</label>
-            <select id="floor">
-              <option value="first">Первый</option>
-              <option value="mid" selected>Средний</option>
-              <option value="last">Последний</option>
+            <label for="wc">Санузел</label>
+            <select id="wc">
+              <option value="combined" selected>Совмещённый</option>
+              <option value="split">Раздельный</option>
+              <option value="two">Два и более</option>
             </select>
           </div>
           <div class="cf">
-            <label for="year">Год постройки</label>
-            <select id="year">
-              <option value="old">До 1980</option>
-              <option value="soviet" selected>1980–2000</option>
-              <option value="new">2000–2015</option>
-              <option value="fresh">После 2015</option>
-            </select>
+            <label for="ceil">Высота потолков, м</label>
+            <input type="number" id="ceil" value="2.7" min="2.2" max="5" step="0.05">
           </div>
         </div>
         <div class="cf">
-          <label for="repair">Состояние ремонта</label>
-          <select id="repair">
-            <option value="none">Без ремонта</option>
-            <option value="old">Старый советский</option>
-            <option value="cosmetic" selected>Косметический</option>
-            <option value="modern">Современный</option>
-            <option value="premium">Премиальный</option>
+          <label for="balcony">Балкон или лоджия</label>
+          <select id="balcony">
+            <option value="none">Нет</option>
+            <option value="balcony" selected>Балкон</option>
+            <option value="loggia">Лоджия</option>
+            <option value="glazed">Застеклённая лоджия</option>
           </select>
         </div>
 
         <h3>Дополнительно</h3>
         <div class="chips">
           <label class="chip"><input type="checkbox" id="ex-park"><span>Парковочное место</span></label>
-          <label class="chip"><input type="checkbox" id="ex-balcony"><span>Балкон или лоджия</span></label>
-          <label class="chip"><input type="checkbox" id="ex-wc"><span>Раздельный санузел</span></label>
-          <label class="chip"><input type="checkbox" id="ex-ceil"><span>Потолки от 3 м</span></label>
-          <label class="chip"><input type="checkbox" id="ex-store"><span>Кладовая</span></label>
+          <label class="chip"><input type="checkbox" id="ex-store"><span>Кладовая или подвал</span></label>
+          <label class="chip"><input type="checkbox" id="ex-lift"><span>Лифт в доме</span></label>
+          <label class="chip"><input type="checkbox" id="ex-furn"><span>С мебелью и техникой</span></label>
+          <label class="chip"><input type="checkbox" id="ex-corner"><span>Угловая квартира</span></label>
+          <label class="chip"><input type="checkbox" id="ex-road"><span>Окна на шумную улицу</span></label>
+          <label class="chip"><input type="checkbox" id="ex-encumb"><span>Обременение, залог</span></label>
         </div>
       </div>
 
@@ -224,9 +262,10 @@
         <ul class="rows">
           <li><span class="k">Цена за м²</span><span id="out-sqm">—</span></li>
           <li><span class="k">Базовая цена м²</span><span id="out-base">—</span></li>
-          <li><span class="k">Итоговый коэффициент</span><span id="out-koef">—</span></li>
         </ul>
-        <p class="note">Расчёт по средним ценам предложения на сентябрь 2026 года. Не учитывает конкретный дом, инфраструктуру и текущий спрос. Для нотариуса, банка и суда нужен отчёт об оценке.</p>
+        <div class="lbl" style="margin-top:1.6rem">Разбивка корректировок</div>
+        <ul class="rows koef" id="out-koef"></ul>
+        <p class="note">Расчёт по средним ценам предложения на сентябрь 2026 года. Не учитывает конкретный дом, состояние подъезда, вид из окна, юридическую чистоту документов и текущий спрос. Для нотариуса, банка и суда нужен отчёт об оценке.</p>
         <div class="cta-row">
           <button class="btn btn-solid" data-modal>Заказать отчёт об оценке <span class="arw">→</span></button>
         </div>
@@ -381,52 +420,133 @@
 <script src="assets/app.js?v=5"></script>
 <script>
 (function(){
-  var BASE = {
-    almaty:    {center:1050000, mid:780000, edge:600000},
-    astana:    {center:790000,  mid:600000, edge:460000},
-    shymkent:  {center:560000,  mid:450000, edge:370000},
-    karaganda: {center:450000,  mid:370000, edge:300000},
-    aktobe:    {center:470000,  mid:390000, edge:320000},
-    atyrau:    {center:620000,  mid:520000, edge:430000},
-    other:     {center:450000,  mid:370000, edge:300000}
+  // базовая цена м², тенге — по данным мониторинга рынка, сентябрь 2026
+  var DISTRICT = {
+    medeu:      {name:'Медеуский',      base: 985000},
+    bostandyk:  {name:'Бостандыкский',  base: 905000},
+    almaly:     {name:'Алмалинский',    base: 865000},
+    auezov:     {name:'Ауэзовский',     base: 745000},
+    nauryzbay:  {name:'Наурызбайский',  base: 705000},
+    zhetysu:    {name:'Жетысуский',     base: 690000},
+    turksib:    {name:'Турксибский',    base: 630000},
+    alatau:     {name:'Алатауский',     base: 610000}
   };
-  var K = {
-    material: {panel:1.00, brick:1.07, monolith:1.12},
-    floor:    {first:0.92, mid:1.00, last:0.96},
-    year:     {old:0.92, soviet:0.97, new:1.03, fresh:1.08},
-    repair:   {none:0.88, old:0.93, cosmetic:1.00, modern:1.08, premium:1.15}
+  var CITY = {
+    astana:    {center:790000, mid:600000, edge:460000},
+    shymkent:  {center:560000, mid:450000, edge:370000},
+    karaganda: {center:450000, mid:370000, edge:300000},
+    aktobe:    {center:470000, mid:390000, edge:320000},
+    atyrau:    {center:620000, mid:520000, edge:430000},
+    other:     {center:450000, mid:370000, edge:300000}
   };
-  var EXTRA = {'ex-park':0.03,'ex-balcony':0.02,'ex-wc':0.01,'ex-ceil':0.03,'ex-store':0.01};
+  var MAT = {panel:{k:1.00,n:'Панельный'}, brick:{k:1.07,n:'Кирпичный'},
+             monolith:{k:1.12,n:'Монолит'}, block:{k:1.05,n:'Газоблок'}};
+  var REP = {none:{k:0.86,n:'Без ремонта'}, old:{k:0.93,n:'Старый ремонт'},
+             cosmetic:{k:1.00,n:'Косметический'}, modern:{k:1.08,n:'Современный'},
+             premium:{k:1.15,n:'Премиальный'}};
+  var WC  = {combined:{k:1.00,n:'Совмещённый санузел'}, split:{k:1.02,n:'Раздельный санузел'},
+             two:{k:1.04,n:'Два санузла'}};
+  var BAL = {none:{k:0.98,n:'Без балкона'}, balcony:{k:1.00,n:'Балкон'},
+             loggia:{k:1.015,n:'Лоджия'}, glazed:{k:1.025,n:'Застеклённая лоджия'}};
+  var ROOM= {studio:{k:1.03,n:'Студия'}, '1':{k:1.02,n:'1 комната'}, '2':{k:1.00,n:'2 комнаты'},
+             '3':{k:0.98,n:'3 комнаты'}, '4':{k:0.96,n:'4 и более комнат'}};
+  var EXTRA = {
+    'ex-park':   {k:1.03,  n:'Парковочное место'},
+    'ex-store':  {k:1.01,  n:'Кладовая'},
+    'ex-lift':   {k:1.02,  n:'Лифт'},
+    'ex-furn':   {k:1.03,  n:'Мебель и техника'},
+    'ex-corner': {k:0.98,  n:'Угловая квартира'},
+    'ex-road':   {k:0.96,  n:'Окна на шумную улицу'},
+    'ex-encumb': {k:0.93,  n:'Обременение'}
+  };
+
   var $ = function(id){ return document.getElementById(id); };
   var fmt = function(n){ return new Intl.NumberFormat('ru-RU').format(Math.round(n)) + ' \u20B8'; };
+  var num = function(id, def){ var v = parseFloat($(id).value); return isNaN(v) ? def : v; };
 
-  function calc(){
-    var city = $('city').value, zone = $('zone').value;
-    var area = parseFloat($('area').value) || 0;
-    if(area < 10){ area = 10; }
-    var base = BASE[city][zone];
-    var k = K.material[$('material').value] * K.floor[$('floor').value]
-          * K.year[$('year').value] * K.repair[$('repair').value];
-    var add = 0;
-    for(var id in EXTRA){ if($(id) && $(id).checked) add += EXTRA[id]; }
-    k = k * (1 + add);
-    var sqm = base * k, total = sqm * area;
-    $('out-total').textContent = fmt(total);
-    $('out-range').textContent = 'Диапазон: ' + fmt(total*0.92) + ' \u2014 ' + fmt(total*1.08);
-    $('out-sqm').textContent = fmt(sqm);
-    $('out-base').textContent = fmt(base);
-    $('out-koef').textContent = '\u00D7 ' + k.toFixed(3);
+  function ageK(y){
+    var age = 2026 - y;
+    if (age <= 3)  return {k:1.10, n:'Новостройка, до 3 лет'};
+    if (age <= 10) return {k:1.06, n:'Дом до 10 лет'};
+    if (age <= 25) return {k:1.00, n:'Дом 10–25 лет'};
+    if (age <= 45) return {k:0.95, n:'Дом 25–45 лет'};
+    return {k:0.90, n:'Дом старше 45 лет'};
+  }
+  function floorK(f, all){
+    if (f === 1)   return {k:0.92, n:'Первый этаж'};
+    if (f >= all)  return {k:0.96, n:'Последний этаж'};
+    if (all >= 5 && f >= 2 && f <= 4) return {k:1.02, n:'Нижние этажи'};
+    return {k:1.00, n:'Средний этаж'};
+  }
+  function ceilK(h){
+    if (h >= 3.2) return {k:1.06, n:'Потолки от 3,2 м'};
+    if (h >= 2.9) return {k:1.03, n:'Потолки 2,9–3,2 м'};
+    if (h <  2.5) return {k:0.97, n:'Низкие потолки'};
+    return {k:1.00, n:'Стандартные потолки'};
   }
 
-  var ids = ['city','zone','area','rooms','material','floor','year','repair'];
-  ids.forEach(function(i){ var el = $(i); if(el) el.addEventListener('input', calc); });
+  function calc(){
+    var city = $('city').value, base, where;
+    if (city === 'almaty') {
+      var d = DISTRICT[$('district').value];
+      base = d.base; where = d.name + ' район';
+    } else {
+      base = CITY[city][$('zone').value];
+      where = $('zone').options[$('zone').selectedIndex].text;
+    }
+    var area = Math.max(10, num('area', 60));
+    var floors = Math.max(1, Math.round(num('floors', 9)));
+    var floor = Math.min(Math.max(1, Math.round(num('floor', 4))), floors);
+
+    var list = [
+      MAT[$('material').value],
+      ageK(Math.min(2026, Math.max(1930, Math.round(num('byear', 1995))))),
+      floorK(floor, floors),
+      REP[$('repair').value],
+      WC[$('wc').value],
+      ceilK(num('ceil', 2.7)),
+      BAL[$('balcony').value],
+      ROOM[$('rooms').value]
+    ];
+    for (var id in EXTRA) { if ($(id) && $(id).checked) list.push(EXTRA[id]); }
+
+    var k = 1;
+    list.forEach(function(x){ k *= x.k; });
+
+    var sqm = base * k, total = sqm * area;
+    $('out-total').textContent = fmt(total);
+    $('out-range').textContent = 'Диапазон: ' + fmt(total * 0.92) + ' \u2014 ' + fmt(total * 1.08);
+    $('out-sqm').textContent = fmt(sqm);
+    $('out-base').textContent = fmt(base) + ' \u00B7 ' + where;
+
+    var html = '';
+    list.forEach(function(x){
+      if (x.k === 1) return;
+      var pct = Math.round((x.k - 1) * 1000) / 10;
+      var sign = pct > 0 ? '+' : '';
+      var col = pct > 0 ? '#7CE0C3' : '#FFB4A2';
+      html += '<li><span class="k">' + x.n + '</span><span style="color:' + col + '">' + sign + pct + ' %</span></li>';
+    });
+    html += '<li><span class="k">Итоговый коэффициент</span><span><b>\u00D7 ' + k.toFixed(3) + '</b></span></li>';
+    $('out-koef').innerHTML = html;
+  }
+
+  function toggleCity(){
+    var a = $('city').value === 'almaty';
+    $('wrap-district').style.display = a ? '' : 'none';
+    $('wrap-zone').style.display = a ? 'none' : '';
+    calc();
+  }
+
+  ['city','district','zone','area','rooms','material','byear','floor','floors','repair','wc','ceil','balcony']
+    .forEach(function(i){ var el = $(i); if (el) el.addEventListener('input', i === 'city' ? toggleCity : calc); });
   document.querySelectorAll('.chip input').forEach(function(c){
     c.addEventListener('change', function(){
       c.closest('.chip').classList.toggle('on', c.checked);
       calc();
     });
   });
-  calc();
+  toggleCity();
 })();
 </script>
 </body>
