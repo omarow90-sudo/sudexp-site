@@ -9,18 +9,18 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
 
 RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
 RewriteRule ^index\.html$ / [R=301,L]
-
 RewriteCond %{THE_REQUEST} \s/+kz/index\.html[\s?] [NC]
 RewriteRule ^kz/index\.html$ /kz/ [R=301,L]
+
+RewriteRule ^avtotehnicheskaya-ekspertiza(\.html)?$ /avtotovarovedcheskaya-ekspertiza.html [R=301,L]
+RewriteRule ^kz/avtotehnicheskaya-ekspertiza(\.html)?$ /kz/avtotovarovedcheskaya-ekspertiza.html [R=301,L]
+RewriteRule ^auto(\.html)?$ /avtotovarovedcheskaya-ekspertiza.html [R=301,L]
+RewriteRule ^construction(\.html)?$ /stroitelnaya-ekspertiza.html [R=301,L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^(.+)$ $1.html [L]
-
-Redirect 301 /auto.html /avtotovarovedcheskaya-ekspertiza.html
-Redirect 301 /construction.html /stroitelnaya-ekspertiza.html
-Redirect 301 /avtotehnicheskaya-ekspertiza.html /avtotovarovedcheskaya-ekspertiza.html
+RewriteRule ^(.+?)/?$ /$1.html [R=301,L]
 
 DirectoryIndex index.html
 ErrorDocument 404 /index.html
