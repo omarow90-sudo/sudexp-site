@@ -477,3 +477,17 @@ header.stuck .brand img{height:36px}
 .calc-out .rows.koef li{padding:.5rem 0;font-size:.86rem}
 .calc-out .rows.koef li:first-child{border-top:1px solid rgba(255,255,255,.14)}
 .calc-out .rows.koef .k{font-size:.66rem;text-transform:none;letter-spacing:.02em;font-family:var(--body);color:#C7D0DC;padding-top:0;font-size:.86rem}
+
+/* mobile fixes 2026-10 */
+html,body{overflow-x:clip}
+@media (max-width:620px){
+.price-table th,.price-table td{padding:.8rem .7rem}
+.price-table th{letter-spacing:.06em;font-size:.62rem}
+.price-table td{font-size:.86rem}
+.price-table td:last-child{font-size:.8rem}
+}
+@media (max-width:400px){
+.price-table{overflow-x:auto}
+.price-table th,.price-table td{padding:.7rem .5rem}
+.price-table td{font-size:.82rem}
+}
